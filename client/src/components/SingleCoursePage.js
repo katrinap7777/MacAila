@@ -10,7 +10,7 @@ const SingleCoursePage = () => {
     const fetchData = async () => {
       // const response = await fetch("http://localhost:5001/courses/${id}");
       const response = await fetch(
-        `https://api-lrf2.onrender.com/courses/courses/${id}`,
+        `https://api-lrf2.onrender.com/course/${id}`,
         {
           method: "GET",
           headers: {
