@@ -24,9 +24,9 @@ services:
       - ./api:/app
       - /app/node_modules
     environment:
-      - API_PORT=5001
       - DATABASE_URL=postgres://postgres:password@db:5432/postgres
   db:
+    image: postgres:13-alpine
     build:
       context: ./db
     volumes:
@@ -35,6 +35,5 @@ services:
       - "5432:5432"
     environment:
     - POSTGRES_PASSWORD=password
-    - DATABASE_URL=postgres://postgres:password@db:5432/postgres
 volumes:
   db-volume:
