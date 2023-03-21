@@ -17,7 +17,7 @@ app.get("/courses", async (req, res, next) => {
   }
 });
 
-app.get("/courses/:id", async (req, res) => {
+app.get("/courses/course/:id", async (req, res) => {
   try {
     const { id } = req.params;
     const course = await pool.query("SELECT * FROM courses WHERE id = $1", [
