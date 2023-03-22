@@ -19,7 +19,14 @@ app.get("/courses", async (req, res, next) => {
 
 // app.get("/courses/:id", async (req, res) => {
   app.get("/courses/:id", async (req, res) => {
-    res.send(req.params.id)
+   try {
+    const { id } = req.params;
+    const course = await pool.query(`SELECT * FROM courses WHERE id =($1)`, [id,]);
+
+    res.json(course.rows[0]);
+   } catch (err) {
+    next(err);
+   }
 
   // try {
   //   const { id } = req.params;
