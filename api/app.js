@@ -20,7 +20,7 @@ app.get("/courses", async (req, res, next) => {
 app.get("/courses/:id", async (req, res) => {
   try {
     const { id } = req.params;
-    const course = await pool.query("SELECT id, name, description, price, image, buylink FROM courses WHERE id = $1", [
+    const course = await pool.query(`SELECT id, name, description, price, image, buylink FROM courses WHERE id = "$1"`, [
       id,
     ]);
     if (course.rows[0] === undefined) {
