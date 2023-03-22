@@ -17,7 +17,6 @@ app.get("/courses", async (req, res, next) => {
   }
 });
 
-// app.get("/courses/:id", async (req, res) => {
   app.get("/courses/:id", async (req, res) => {
    try {
     const { id } = req.params;
@@ -31,27 +30,6 @@ app.get("/courses", async (req, res, next) => {
    } catch (err) {
     next(err);
    }
-
-  // try {
-  //   const { id } = req.params;
-  //   const course = await pool.query(`SELECT id, name, description, price, image, buylink FROM courses WHERE id = ($1)`, [id,]);
-  //   if (course.rows[0] === undefined) {
-  //     res.sendStatus(404);
-  //   } else {
-  //     res.json(course.rows[0]);
-  //   }
-  // } catch (err) {
-  //   console.error(err.message);
-  // }
 });
-
-// app.get("/courses", async (req, res, next) => {
-//   try {
-//     const courses = await pool.query(`SELECT * FROM courses`);
-//     res.json(courses.rows);
-//   } catch (err) {
-//     next(err);
-//   }
-// });
 
 module.exports = app;
