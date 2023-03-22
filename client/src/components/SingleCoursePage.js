@@ -91,15 +91,15 @@ const SingleCoursePage = () => {
           <div className="course-container">
             <div>
               <img
-                src={course.id.image}
-                alt={course.id.description}
+                src={course.image}
+                alt={course.description}
                 className="course-image"
               />
-              <h3>{course.id.name}</h3>
-              <p>{course.id.description}</p>
-              <p>{course.id.price}</p>
+              <h3>{course.name}</h3>
+              <p>{course.description}</p>
+              <p>{course.price}</p>
             </div>
-            <a href={course.id.buylink} target="_blank" rel="noopener noreferrer">
+            <a href={course.buylink} target="_blank" rel="noopener noreferrer">
               <button>Buy course</button>
             </a>
             <br />
